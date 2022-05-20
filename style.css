@@ -1,0 +1,361 @@
+body{
+    margin: 0;
+    padding:0;
+    font-family: 'League Spartan', sans-serif;
+    background-color: var(--Verydarkdesaturatedblue1);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+*,::before,::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: normal;
+    transition: all 0.5s
+}
+:root{
+    /* ##### THEME 1 */
+    /* ####BACKGROUNDS */
+    --Verydarkdesaturatedblue1 : hsl(222, 26%, 31%);
+    --Verydarkdesaturatedblue2 : hsl(223, 31%, 20%);
+    --Verydarkdesaturatedblue3 : hsl(224, 36%, 15%);
+
+    /* #### KEYS */
+    --Desaturateddarkblue1 : hsl(225, 21%, 49%);
+    --Desaturateddarkblue2 : hsl(224, 28%, 35%);
+    --Red : hsl(6, 63%, 50%);
+    --Darkred : hsl(6, 70%, 34%);
+    --Lightgrayishorange : hsl(30, 25%, 89%);
+    --Grayishorange: hsl(28, 16%, 65%);
+    
+    /* #### TEXT */
+    --Verydarkgrayishblue: hsl(221, 14%, 31%);
+    --White: hsl(0, 0, 100%);
+    /* --------------------------------------------------------------------------- */
+
+
+    /* ##### THEME 2 */
+    /* ####BACKGROUNDS */
+    --Lightgray : hsl(0, 0%, 90%);
+    --Grayishred : hsl(0, 5%, 81%);
+    --Verylightgray: hsl(0, 0%, 93%);
+    
+    /* #### KEYS */
+    --Darkmoderatecyan  : hsl(185, 42%, 37%);
+    --Verydarkcyan : hsl(185, 58%, 25%);
+    --Orange  : hsl(25, 98%, 40%);
+    --Darkorange : hsl(25, 99%, 27%);
+    --Lightgrayishyellow  : hsl(45, 7%, 89%);
+    --Darkgrayishorange : hsl(35, 11%, 61%);
+
+    /* #### TEXT */
+    --Verydarkgrayishyellow: hsl(60, 10%, 19%);
+    --White: hsl(0, 0, 100%); 
+    /* --------------------------------------------------------------------------- */
+
+
+    /* ##### THEME 3 */
+    /* ####BACKGROUNDS */
+    --Verydarkviolet1 : hsl(268, 75%, 9%);
+    --Verydarkviolet2 : hsl(268, 71%, 12%);
+    
+    /* #### KEYS */
+    --Darkviolet : hsl(281, 89%, 26%);
+    --Vividmagenta : hsl(285, 91%, 52%);
+    --Purecyan : hsl(176, 100%, 44%);
+    --Softcyan : hsl(177, 92%, 70%);
+    --Verydarkviolet : hsl(268, 47%, 21%);
+    --Darkmagenta : hsl(290, 70%, 36%);
+
+    /* #### TEXT */
+    --Lightyellow: hsl(52, 100%, 62%);
+    --Verydarkblue: hsl(198, 20%, 13%);
+    --White : hsl(0, 0, 100%);
+
+}
+
+/* CONTAINER */
+.calculator{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: white
+}
+
+/* HEADER */
+.name-theme{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.title{
+    letter-spacing: 1.5px;
+    font-size: 25px;
+}
+.theme{
+    display: flex;
+    gap: 15px;
+}
+.theme h4{
+    font-size: 10px;
+    letter-spacing: 3px;
+    place-self: end;
+    margin-bottom: 5px;
+}
+
+/* SCREEN */
+.screen{
+    background-color: var(--Verydarkdesaturatedblue3);
+    padding: 25px 30px;
+    text-align: right;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+.num2{
+    font-size: 30px;
+}
+.num1{
+    color: white;
+}
+
+/* Main */
+main{
+    background-color: var( --Verydarkdesaturatedblue2) ;
+    padding: 20px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 15px;
+}
+.reset ,.equal{
+    grid-column: span 2;
+    padding: 15px 10px ;
+    color: white;
+    font-size: 15px;
+}
+.delete{
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+button{
+    padding: 8px 15px ;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.number{
+    font-size: 25px;
+    color: var(--Verydarkgrayishblue);
+    background-color: var( --Lightgrayishorange) ;
+    border-bottom: 3px solid var(--Grayishorange);
+   
+}
+.operator{
+    font-size: 20px;
+    background-color: var( --Lightgrayishorange) ;
+    color: var(--Verydarkgrayishblue);
+    border-bottom: 3px solid var(--Grayishorange);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.delete , .reset {
+    background-color: var(--Desaturateddarkblue1);
+    border-bottom: 3px solid var(--Desaturateddarkblue2);
+    letter-spacing: 1px;
+}
+.equal{
+    background-color: var(--Red);
+    border-bottom: 3px solid var(--Darkred);
+}
+
+/* TOGGLE */
+.toggle__input{
+    opacity: 0;
+}
+.toggle__wrapper{
+    position: relative;
+}
+.backgroung{
+    background-color: var(--Verydarkdesaturatedblue2);
+    display: block;
+    width: 100%;
+    height: 18px;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    
+    pointer-events: none;
+}
+.container__label{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px;
+    margin-bottom: 5px;
+    font-size: 12px;
+   
+}
+label{
+    cursor: pointer;
+}
+
+input{
+    height: 14px;
+    width: 14px;
+    margin: 2.5px 0;
+    cursor: pointer;
+}
+input:first-child{
+    margin-left: 2px;
+}
+input:nth-child(3){
+    margin-right: 2px;
+}
+.button{
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    background-color: var(--Darkred);
+    border-radius: 50%;
+    top:2.5px;
+    left: 2px;
+    pointer-events: none;
+    transition: all 300ms ease-in-out;
+}
+input#tree:checked ~ .button{
+    left: 70.3%;
+}
+input#two:checked ~ .button{
+    left: 50%;
+    right: auto;
+    transform: translate(-50%);
+}
+
+/* THEME 2 STYLES */
+
+.theme2{
+    background-color: var(--Lightgray);
+}
+.theme2 main{
+    background-color: var( --Grayishred) ;
+}
+.theme2 .backgroung{
+    background-color: var( --Grayishred) ;
+}
+.theme2 .screen{
+    background-color: var(--Grayishred);
+}
+.theme2 .delete {
+    background-color: var(--Darkmoderatecyan);
+    border-bottom: 3px solid var(--Verydarkcyan);
+}
+.theme2 .reset{
+    background-color: var(--Darkmoderatecyan);
+    border-bottom: 3px solid var(--Verydarkcyan);
+}
+.theme2 .equal{
+    background-color: var(--Orange);
+    border-bottom: 3px solid var(--Darkorange);
+}
+.theme2 .button{
+    background-color: var(--Orange);
+}
+.theme2 .number{
+    color: var(--Verydarkgrayishyellow);
+    background-color: var( --Lightgrayishyellow) ;
+    border-bottom: 3px solid var(--Darkgrayishorange);
+}
+.theme2 .operator{
+    color: var(--Verydarkgrayishyellow);
+    background-color: var( --Lightgrayishyellow) ;
+    border-bottom: 3px solid var(--Darkgrayishorange);
+}
+.theme2 .title{
+    color: var(--Verydarkgrayishyellow);
+}
+.theme2 .theme h4{
+    color: var(--Verydarkgrayishyellow);
+}
+.theme2 .container__label{
+    color: var(--Verydarkgrayishyellow);
+}
+.theme2 .num2{
+    color: var(--Verydarkgrayishyellow);
+}
+.theme2 .num1{
+    color: var(--Verydarkgrayishyellow);
+}
+
+
+/* THEME 3 STYLES */
+.theme3{
+    background-color: var(--Verydarkviolet1);
+}
+.theme3 main{
+    background-color: var( --Verydarkviolet2) ;
+}
+.theme3 .backgroung{
+    background-color: var( --Verydarkviolet2) ;
+}
+.theme3 .screen{
+    background-color: var(--Verydarkviolet2);
+}
+.theme3 .delete{
+    background-color: var(--Darkviolet);
+    border-bottom: 3px solid var(--Vividmagenta);
+}
+.theme3 .reset{
+    background-color: var(--Darkviolet);
+    border-bottom: 3px solid var(--Vividmagenta);
+}
+
+.theme3 .equal{
+    background-color: var(--Purecyan);
+    border-bottom: 3px solid var(--Softcyan);
+}
+.theme3 .button{
+    background-color: var(--Purecyan);
+}
+.theme3 .number{
+    color: var(--Lightyellow);
+    background-color: var( --Verydarkviolet) ;
+    border-bottom: 3px solid var(--Darkmagenta);
+}
+.theme3 .operator{
+    color: var(--Lightyellow);
+    background-color: var( --Verydarkviolet) ;
+    border-bottom: 3px solid var(--Darkmagenta);
+}
+.theme3 .title {
+    color: var(--Lightyellow);
+}
+.theme3 .theme h4{
+    color: var(--Lightyellow);
+}
+.theme3 .container__label{
+    color: var(--Lightyellow);
+}
+.theme3 .num2{
+    color: var(--Lightyellow);
+}
+.theme3 .num1{
+    color: var(--Lightyellow);
+}
+
+
+
